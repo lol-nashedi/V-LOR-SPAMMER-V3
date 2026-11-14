@@ -1,0 +1,185 @@
+-- VÆLOR V3 SPAMMER + RJB - NO NUMBERING - 7 PATTERNS 100 CHARS
+print("VÆLOR LOADING...")
+local Players = game:GetService("Players")
+local LP = Players.LocalPlayer
+local PG = LP:WaitForChild("PlayerGui")
+if PG:FindFirstChild("NXSV3SpammerUI") then PG.NXSV3SpammerUI:Destroy() end
+local function N(c, pr, par)
+    local o = Instance.new(c)
+    for k, v in pairs(pr) do pcall(function() o[k] = v end) end
+    if par then o.Parent = par end
+    return o
+end
+local SG = N("ScreenGui", {Name = "VÆLOR V3 SPAMMER", ResetOnSpawn = false, IgnoreGuiInset = true, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, PG)
+local Main = N("Frame", {Name = "MainFrame", Size = UDim2.new(1,0,1,0), BackgroundTransparency = 1}, SG)
+local W = N("Frame", {Size = UDim2.new(0,680,0,320), Position = UDim2.new(0.5,0,0.5,25), AnchorPoint = Vector2.new(0.5,0.5), BackgroundColor3 = Color3.fromRGB(7,10,15)}, Main)
+N("UIStroke", {Thickness = 1.5, Color = Color3.fromRGB(0,229,255)}, W)
+N("UICorner", {CornerRadius = UDim.new(0,10)}, W)
+local Header = N("Frame", {Size = UDim2.new(1,0,0,44), BackgroundColor3 = Color3.fromRGB(16,21,29)}, W)
+N("Frame", {Size = UDim2.new(1,0,0,1), Position = UDim2.new(0,0,1,-1), BackgroundColor3 = Color3.fromRGB(0,229,255)}, Header)
+local MinBtn = N("TextButton", {Size = UDim2.new(0,36,0,32), Position = UDim2.new(0,12,0,6), BackgroundColor3 = Color3.fromRGB(7,10,15), Text = "X", Font = Enum.Font.GothamBold, TextSize = 16, TextColor3 = Color3.fromRGB(0,229,255)}, Header)
+N("UICorner", {CornerRadius = UDim.new(0,6)}, MinBtn)
+N("TextLabel", {Size = UDim2.new(1,-60,1,0), Position = UDim2.new(0,60,0,0), BackgroundTransparency = 1, Text = "⚡ VÆLOR V3 SPAMMER // SCRIPT CREATED BY N0T_Z0RO100 AKA NASHEDI", Font = Enum.Font.GothamBold, TextSize = 13, TextColor3 = Color3.fromRGB(244,247,250), TextXAlignment = Enum.TextXAlignment.Left}, Header)
+local Circle = N("TextButton", {Size = UDim2.new(0,55,0,55), Position = UDim2.new(0,25,0,40), BackgroundColor3 = Color3.fromRGB(16,21,29), Text = "⚔️", TextSize = 24, Visible = false, ZIndex = 10}, Main)
+N("UICorner", {CornerRadius = UDim.new(1,0)}, Circle)
+N("UIStroke", {Thickness = 2, Color = Color3.fromRGB(0,229,255)}, Circle)
+local Content = N("Frame", {Size = UDim2.new(1,0,1,-44), Position = UDim2.new(0,0,0,44), BackgroundTransparency = 1}, W)
+local Sidebar = N("Frame", {Size = UDim2.new(0,180,1,-30), Position = UDim2.new(0,15,0,15), BackgroundColor3 = Color3.fromRGB(16,21,29)}, Content)
+N("UICorner", {CornerRadius = UDim.new(0,8)}, Sidebar)
+N("UIListLayout", {Padding = UDim.new(0,6), HorizontalAlignment = Enum.HorizontalAlignment.Center, VerticalAlignment = Enum.VerticalAlignment.Center}, Sidebar)
+local function sBtn(t, red)
+    local b = N("TextButton", {Size = UDim2.new(0.9,0,0,32), BackgroundColor3 = Color3.fromRGB(7,10,15), Font = Enum.Font.GothamMedium, TextSize = 11, TextColor3 = red and Color3.fromRGB(255,60,60) or Color3.fromRGB(119,132,147), Text = t}, Sidebar)
+    N("UICorner", {CornerRadius = UDim.new(0,6)}, b)
+    return b
+end
+local sb1 = sBtn("///===///")
+local sb2 = sBtn("@")
+local sb3 = sBtn("+++---+---+++")
+local EmojiBtn = sBtn("EMOJI: ON", true)
+local CycleBtn = sBtn("CYCLE: ON", true)
+local emojiOn = true
+EmojiBtn.MouseButton1Click:Connect(function() emojiOn = not emojiOn if emojiOn then EmojiBtn.Text = "EMOJI: ON" EmojiBtn.TextColor3 = Color3.fromRGB(255,60,60) else EmojiBtn.Text = "EMOJI: OFF" EmojiBtn.TextColor3 = Color3.fromRGB(119,132,147) end end)
+local cycleOn = true
+CycleBtn.MouseButton1Click:Connect(function() cycleOn = not cycleOn if cycleOn then CycleBtn.Text = "CYCLE: ON" CycleBtn.TextColor3 = Color3.fromRGB(255,60,60) else CycleBtn.Text = "CYCLE: OFF" CycleBtn.TextColor3 = Color3.fromRGB(119,132,147) end end)
+local Panel = N("Frame", {Size = UDim2.new(1,-225,1,-30), Position = UDim2.new(0,210,0,15), BackgroundTransparency = 1}, Content)
+local Grid = N("Frame", {Size = UDim2.new(0,290,0,140), BackgroundTransparency = 1}, Panel)
+N("UIGridLayout", {CellSize = UDim2.new(0,135,0,60), CellPadding = UDim2.new(0,16,0,16)}, Grid)
+local function tBox()
+    local b = N("TextBox", {BackgroundColor3 = Color3.fromRGB(16,21,29), PlaceholderText = "Text Box", Text = "", Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = Color3.fromRGB(244,247,250), PlaceholderColor3 = Color3.fromRGB(119,132,147), ClearTextOnFocus = false}, Grid)
+    N("UICorner", {CornerRadius = UDim.new(0,6)}, b)
+    return b
+end
+local TB1 = tBox() local TB2 = tBox() local TB3 = tBox() local TB4 = tBox()
+sb1.MouseButton1Click:Connect(function()
+    if TB1.Text == "" then TB1.Text = "///===///" elseif TB2.Text == "" then TB2.Text = "///===///" elseif TB3.Text == "" then TB3.Text = "///===///" elseif TB4.Text == "" then TB4.Text = "///===///" else TB1.Text = "///===///" end
+end)
+sb2.MouseButton1Click:Connect(function()
+    if TB1.Text == "" then TB1.Text = "@" elseif TB2.Text == "" then TB2.Text = "@" elseif TB3.Text == "" then TB3.Text = "@" elseif TB4.Text == "" then TB4.Text = "@" else TB1.Text = "@" end
+end)
+sb3.MouseButton1Click:Connect(function()
+    if TB1.Text == "" then TB1.Text = "+++---+---+++" elseif TB2.Text == "" then TB2.Text = "+++---+---+++" elseif TB3.Text == "" then TB3.Text = "+++---+---+++" elseif TB4.Text == "" then TB4.Text = "+++---+---+++" else TB1.Text = "+++---+---+++" end
+end)
+local Controls = N("Frame", {Size = UDim2.new(0,120,0,140), Position = UDim2.new(0,305,0,0), BackgroundTransparency = 1}, Panel)
+N("UIListLayout", {Padding = UDim.new(0,8), HorizontalAlignment = Enum.HorizontalAlignment.Center, VerticalAlignment = Enum.VerticalAlignment.Top}, Controls)
+local function cBtn(t)
+    local b = N("TextButton", {Size = UDim2.new(1,0,0,32), BackgroundColor3 = Color3.fromRGB(16,21,29), Text = t, Font = Enum.Font.GothamBold, TextSize = 11, TextColor3 = Color3.fromRGB(244,247,250), AutoButtonColor = false}, Controls)
+    N("UICorner", {CornerRadius = UDim.new(0,6)}, b) N("UIStroke", {Thickness = 1, Color = Color3.fromRGB(30,42,53)}, b)
+    return b
+end
+local StartBtn = cBtn("START"); StartBtn.TextColor3 = Color3.fromRGB(0,229,255)
+local StopBtn = cBtn("STOP"); StopBtn.TextColor3 = Color3.fromRGB(255,60,60)
+local ClearBtn = cBtn("CLEAR")
+local TimeBox = N("TextBox", {Size = UDim2.new(1,0,0,32), BackgroundColor3 = Color3.fromRGB(16,21,29), PlaceholderText = "TIME LIMIT", Text = "1.2", Font = Enum.Font.GothamBold, TextSize = 11, TextColor3 = Color3.fromRGB(0,229,255), PlaceholderColor3 = Color3.fromRGB(119,132,147), ClearTextOnFocus = false}, Controls)
+N("UICorner", {CornerRadius = UDim.new(0,6)}, TimeBox)
+local StatusFrame = N("Frame", {Size = UDim2.new(1,0,0,70), Position = UDim2.new(0,0,1,-70), BackgroundColor3 = Color3.fromRGB(16,21,29)}, Panel)
+N("UICorner", {CornerRadius = UDim.new(0,8)}, StatusFrame)
+N("UIStroke", {Thickness = 1, Color = Color3.fromRGB(30,42,53)}, StatusFrame)
+N("TextLabel", {Size = UDim2.new(1,-20,0,24), Position = UDim2.new(0,10,0,6), BackgroundTransparency = 1, Text = "SYSTEM STATUS", Font = Enum.Font.GothamBold, TextSize = 10, TextColor3 = Color3.fromRGB(119,132,147), TextXAlignment = Enum.TextXAlignment.Left}, StatusFrame)
+local StatusText = N("TextLabel", {Size = UDim2.new(1,-20,0,30), Position = UDim2.new(0,10,0,29), BackgroundTransparency = 1, Text = "● READY // VÆLOR V3", Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = Color3.fromRGB(0,229,255), TextXAlignment = Enum.TextXAlignment.Left}, StatusFrame)
+local minimized = false local debounce = false
+MinBtn.MouseButton1Click:Connect(function() if debounce or minimized then return end debounce = true minimized = true W.Visible = false Circle.Visible = true task.delay(0.15, function() debounce = false end) end)
+Circle.MouseButton1Click:Connect(function() if debounce or not minimized then return end debounce = true minimized = false W.Visible = true Circle.Visible = false task.delay(0.15, function() debounce = false end) end)
+local UIS = game:GetService("UserInputService")
+local cD = false local cS = nil local cP = nil
+Circle.InputBegan:Connect(function(i) if i.UserInputType == Enum.UserInputType.MouseButton1 or i.UserInputType == Enum.UserInputType.Touch then cD = true cS = i.Position cP = Circle.Position i.Changed:Connect(function() if i.UserInputState == Enum.UserInputState.End then cD = false end end) end end)
+UIS.InputChanged:Connect(function(i) if cD and (i.UserInputType == Enum.UserInputType.MouseMovement or i.UserInputType == Enum.UserInputType.Touch) then local d = i.Position - cS Circle.Position = UDim2.new(cP.X.Scale, cP.X.Offset + d.X, cP.Y.Scale, cP.Y.Offset + d.Y) end end)
+print("[NXS] UI OK")
+local function send(msg)
+    pcall(function()
+        local TCS = game:GetService("TextChatService")
+        local ch = TCS:FindFirstChild("TextChannels")
+        local g = ch and ch:FindFirstChild("RBXGeneral")
+        if g then g:SendAsync(msg)
+        else local RS = game:GetService("ReplicatedStorage") local ev = RS:FindFirstChild("DefaultChatSystemChatEvents") local say = ev and ev:FindFirstChild("SayMessageRequest") if say then say:FireServer(msg, "All") end end
+    end)
+end
+task.spawn(function() task.wait(0.5) send("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 🔥VÆLOR SPAMMER LOADED") end)
+task.spawn(function() while true do task.wait(70) pcall(function() local hum = LP.Character and LP.Character:FindFirstChildOfClass("Humanoid") if hum then hum:ChangeState(Enum.HumanoidStateType.Jumping) end end) end end)
+task.spawn(function()
+    local RS = game:GetService("ReplicatedStorage")
+    local re = RS:WaitForChild("RE", 5)
+    if re then
+        local tr = re:WaitForChild("1RPNam1eTex1t", 5)
+        local cr = re:WaitForChild("1RPNam1eColo1r", 5)
+        if tr and cr then
+            pcall(function() tr:FireServer("RolePlayName", "⚔️☠️VÆLOR SPAMMER😈⚔️") end)
+            task.wait(0.2)
+            pcall(function() tr:FireServer("RolePlayBio", LP.DisplayName) end)
+            task.wait(0.2)
+            pcall(function() cr:FireServer("PickingRPBioColor", Color3.fromRGB(255,0,0)) end)
+            local h = 0
+            while true do pcall(function() cr:FireServer("PickingRPNameColor", Color3.fromHSV(h,1,1)) end) h = h + 0.01 if h > 1 then h = 0 end task.wait(0.1) end
+        end
+    end
+end)
+local WORDS = {
+    "(TMR) ⚡ TMKX DARK PROTOCOL 🌑 VOID MATRIX (CXD) QUANTUM CORE (TMXL)⚡",
+    "(TMR) 🔥 PARALLEL DIMENSION 🌌 NEURAL NETWORK (CXD) CYBER ⚡ (TMXL) AI",
+    "(TMR) ☠️ VENOM PROTOCOL 🐍 ENCRYPTED MATRIX (CXD) SHADOW 🌀 (TMXL) AI⚡",
+    "(TMR) 🚀 HYPER NOVA ✨ QUANTUM PROCESSOR (CXD) COSMIC 💻 (TMXL) AI AI⚡",
+    "(TMR) 👑 PRIME ARCHITECTURE 💎 GOD WAVE (CXD) MASTER 🔮 (TMXL) AI AI ⚡",
+    "(TMR) 🐍 SNAKE VENOM ☠️ DARK ENCRYPTION (CXD) FORTRESS 🛡️ (TMXL) AI AI",
+    "(TMR) 🚁 AEROSPACE NETWORK ✈️ FLIGHT SIMULATION (CXD) SKYNET 🌐 (TMXL)",
+    "(TMR) 💎 LUXURY INTERFACE ✨ TITANIUM (CXD) ROYAL DATABASE 👑 (TMXL) ⚡",
+    "(TMR) 🐘 COLOSSAL ENGINE 🚜 POWER (CXD) INDUSTRIAL NETWORK 🌐 (TMXL) ⚡",
+    "(TMR) 🌊 SUBMARINE MATRIX 🕳️ SONAR (CXD) AQUATIC TECHNOLOGY 🌐 (TMXL)",
+    "(TMR) 🧨 DYNAMITE ENERGY 💥 HIGH VOLTAGE (CXD) REACTOR CORE 🔋 (TMXL)",
+    "(TMR) 🎮 GAMER INTERFACE 🖥️ HERO MODE 🦸 GAME ENGINE 🚀 (CXD) (TMXL) ⚡",
+    "(TMR) 🥟 MASALA DATABASE 🔥 LASSI COOLING (CXD) RANDOM DATA 💻 (TMXL)",
+    "(TMR) 🏆 PRIME LEGEND 👑 MULTICORE (CXD) INFINITE POWER 🚀 (TMXL) AI⚡",
+    "(TMR) 🌌 VOID DIMENSION 🕳️ DARK MATTER (CXD) SPACETIME 🚀 (TMXL) AI ⚡",
+    "(TMR) ⚡ ELECTRONIC DOMINION 🔋 DATA TRANSFER (CXD) DIGITAL 🌐 (TMXL)",
+    "(TMR) 👾 TMKX GODZILLA 🦖 CYBER DYNASTY (CXD) DIGITAL POWER ♾️ (TMXL)",
+    "(TMR) ⚡ QUANTUM CORE 💻 CYBER PHANTOM 👾 (CXD) MATRIX 🌌 (TMXL) AI AI",
+    "(TMR) 🔥 DARK MATTER 🌑 HYPERDRIVE ENGINE (CXD) COSMIC 📡 (TMXL) AI ⚡",
+    "(TMR) 👑 OMEGA SYSTEM 💎 MULTIVERSE NETWORK (CXD) SUPREME ⚡ (TMXL) ⚡",
+}
+local PATTERNS = {
+    "@@@@@",
+    "+~~+~~+",
+    "//=//=//=//",
+    "O|o_O|o",
+    "$$$$$$$$",
+    "§§§§§§§§§§§§§",
+    "(!)(!)(!)(!)",
+}
+local function make100(base)
+    local s = ""
+    while (utf8.len(s) or 0) < 100 do s = s .. base end
+    local cut = utf8.offset(s, 101)
+    if cut then return string.sub(s, 1, cut - 1) else return s end
+end
+print("WORDS:", #WORDS, "PATTERNS:", #PATTERNS)
+local function getTime() local n = tonumber(TimeBox.Text) if n and n > 0 then return n end return 1.2 end
+local pIdx = 1 local nameIdx = 1 local running = false local runId = 0
+local function getBracket()
+    local clean = {}
+    for _, tb in ipairs({TB1,TB2,TB3,TB4}) do if tb.Text ~= "" then table.insert(clean, tb.Text) end end
+    if #clean == 0 then return "" end
+    local o = clean[nameIdx] nameIdx = nameIdx + 1 if nameIdx > #clean then nameIdx = 1 end
+    return "["..o.."]"
+end
+ClearBtn.MouseButton1Click:Connect(function() TB1.Text = "" TB2.Text = "" TB3.Text = "" TB4.Text = "" StatusText.Text = "● CLEARED // READY" StatusText.TextColor3 = Color3.fromRGB(0,229,255) end)
+StartBtn.MouseButton1Click:Connect(function()
+    if running then return end
+    running = true runId = runId + 1 local my = runId
+    StartBtn.Text = "RUNNING" StartBtn.TextColor3 = Color3.fromRGB(70,255,130) StatusText.Text = "● ACTIVE // VÆLOR V3" StatusText.TextColor3 = Color3.fromRGB(70,255,130)
+    task.spawn(function()
+        while running and runId == my do
+            local word = WORDS[pIdx]
+            if not word then pIdx = 1 word = WORDS[1] end
+            local patIdx = ((pIdx - 1) % #PATTERNS) + 1
+            local pat100 = make100(PATTERNS[patIdx])
+            local bracket = getBracket()
+            local final = word
+            if emojiOn then final = pat100 .. word else final = word end
+            if bracket ~= "" then final = bracket .. " " .. final end
+            send(final)
+            pIdx = pIdx + 1
+            if pIdx > #WORDS then if cycleOn then pIdx = 1 else running = false StartBtn.Text = "START" StatusText.Text = "● FINISHED // VÆLOR V3" break end end
+            task.wait(getTime())
+        end
+    end)
+end)
+StopBtn.MouseButton1Click:Connect(function() running = false runId = runId + 1 StartBtn.Text = "START" StartBtn.TextColor3 = Color3.fromRGB(0,229,255) StatusText.Text = "● STOPPED // VÆLOR V3" StatusText.TextColor3 = Color3.fromRGB(255,60,60) end)
+print("[VÆLOR] FULLY LOADED")
